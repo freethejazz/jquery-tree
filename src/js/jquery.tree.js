@@ -582,6 +582,26 @@
         },
 
         /**
+         * Get all checked elements
+         *
+         * @public
+         */
+
+        getAllChecked: function(){
+            return $(this.element).find('input:checkbox:checked').closest('li');
+        },
+
+        /**
+         * Get all checked leaf elements
+         *
+         * @public
+         */
+
+        getAllCheckedLeaves: function(){
+            return $(this.element).find('input:checkbox:checked').closest('li').not(':has(ul.tree)');
+        },
+
+        /**
          * Initialize plugin
          *
          * @private

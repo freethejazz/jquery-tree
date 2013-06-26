@@ -294,6 +294,26 @@ $.widget("daredevel.treecheckbox", {
     },
 
     /**
+     * Get all checked elements
+     *
+     * @public
+     */
+
+    getAllChecked: function(){
+        return $(this.element).find('input:checkbox:checked');
+    },
+
+    /**
+     * Get all checked leaf elements
+     *
+     * @public
+     */
+
+    getAllCheckedLeaves: function(){
+        return $(this.element).find('input:checkbox:checked').not(':has(ul.tree)');
+    },
+
+    /**
      * Default options values.
      */
     options:{
